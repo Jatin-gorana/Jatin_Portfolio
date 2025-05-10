@@ -1,0 +1,93 @@
+
+import React from 'react';
+import { motion } from 'framer-motion';
+
+const AboutSection = () => {
+  return (
+    <section id="about" className="py-20 relative overflow-hidden">
+      <div className="container">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl md:text-4xl font-bold heading-gradient">About Me</h2>
+          <div className="w-20 h-1 bg-accent mx-auto mt-4"></div>
+        </motion.div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <div className="relative w-full aspect-[4/5] bg-gradient-to-tr from-accent to-secondary rounded-lg overflow-hidden shadow-xl">
+              <div className="absolute inset-0 flex items-center justify-center text-white">
+                <div className="text-center">
+                  <h3 className="text-xl font-bold mb-2">Jatin Gorana</h3>
+                  <p className="text-sm">Full Stack Developer</p>
+                </div>
+              </div>
+            </div>
+            <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-accent rounded-lg"></div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-2xl font-bold mb-6">Who I Am</h3>
+            <p className="text-muted-foreground mb-4">
+              I'm a Full Stack Developer with expertise in the MERN stack, Firebase, and AI/ML technologies. 
+              Currently pursuing a Bachelor's degree in Artificial Intelligence and Data Science at Thadomal 
+              Shahani Engineering College with a stellar CGPA of 9.72.
+            </p>
+            <p className="text-muted-foreground mb-4">
+              My passion lies in building scalable, data-driven web applications that leverage cutting-edge 
+              technologies to create intelligent and user-centric solutions. I enjoy solving complex problems 
+              and turning ideas into functional, efficient code.
+            </p>
+            <p className="text-muted-foreground mb-6">
+              When I'm not coding, I'm actively participating in hackathons, contributing to open-source 
+              projects, or expanding my knowledge in emerging technologies.
+            </p>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <h4 className="text-sm font-semibold text-accent mb-2">Education</h4>
+                <ul className="space-y-2">
+                  <li className="text-sm">
+                    <span className="font-medium">B.E. in AI & Data Science</span>
+                    <p className="text-xs text-muted-foreground">Thadomal Shahani Engineering College, 2022-Present</p>
+                  </li>
+                  <li className="text-sm">
+                    <span className="font-medium">HSC (Computer Science)</span>
+                    <p className="text-xs text-muted-foreground">Thakur College of Science and Commerce, 2021-2022</p>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-sm font-semibold text-accent mb-2">Leadership</h4>
+                <ul className="space-y-2">
+                  <li className="text-sm">
+                    <span className="font-medium">Senior Core Team Member</span>
+                    <p className="text-xs text-muted-foreground">Google Developers Group, TSEC (2024-Present)</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AboutSection;
