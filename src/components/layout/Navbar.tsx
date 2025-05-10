@@ -2,10 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { useIsMobile } from '../../hooks/use-mobile';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   const navLinks = [
     { name: 'About', href: '#about' },
@@ -31,13 +33,13 @@ const Navbar = () => {
   return (
     <motion.header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'py-3 bg-background/80 backdrop-blur-lg shadow-md' : 'py-5'
+        isScrolled ? 'py-3 bg-background/80 backdrop-blur-lg shadow-md' : 'py-4'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: 'spring', stiffness: 100, damping: 20 }}
     >
-      <div className="container flex justify-between items-center">
+      <div className="container mx-auto px-4 flex justify-between items-center">
         <motion.div 
           className="text-2xl font-bold"
           initial={{ opacity: 0 }}
@@ -48,7 +50,7 @@ const Navbar = () => {
         </motion.div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-5 lg:space-x-8">
           {navLinks.map((link, i) => (
             <motion.a
               key={link.name}
@@ -63,7 +65,7 @@ const Navbar = () => {
           ))}
           <motion.a
             href="/Jatin_Gorana_Resume.pdf"
-            className="btn-primary"
+            className="btn-primary text-sm"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
@@ -85,7 +87,7 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <motion.div
-            className="fixed inset-0 top-16 z-50 bg-background md:hidden"
+            className="fixed inset-0 top-[60px] z-50 bg-background/95 backdrop-blur-md md:hidden"
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
@@ -104,7 +106,7 @@ const Navbar = () => {
               ))}
               <a
                 href="/Jatin_Gorana_Resume.pdf"
-                className="btn-primary"
+                className="btn-primary px-8"
                 download
                 onClick={() => setMobileMenuOpen(false)}
               >

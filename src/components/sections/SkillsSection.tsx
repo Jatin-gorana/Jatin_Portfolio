@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import SkillsSphere from '../3d/SkillsSphere';
 import { 
   Code, 
   Layers, 
@@ -62,15 +61,12 @@ const SkillsSection = () => {
           </p>
         </motion.div>
 
-        {/* 3D Skills Sphere */}
-        <SkillsSphere />
-
         {/* Skills Categories */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-8 mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mt-12">
           {skillCategories.map((category, i) => (
             <motion.div 
               key={category.title}
-              className="glass-card p-6 flex flex-col items-center justify-start"
+              className="glass-card p-6 flex flex-col items-center justify-start h-full"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
