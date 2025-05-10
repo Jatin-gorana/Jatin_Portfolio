@@ -106,12 +106,14 @@ const SkillsSphere = () => {
           </div>
         ))}
       </div>
-      <style jsx>{`
-        @keyframes spin {
-          from { transform: rotateY(0deg) rotateX(10deg); }
-          to { transform: rotateY(360deg) rotateX(10deg); }
-        }
-      `}</style>
+      <style>
+        {`
+          @keyframes spin {
+            from { transform: rotateY(0deg) rotateX(10deg); }
+            to { transform: rotateY(360deg) rotateX(10deg); }
+          }
+        `}
+      </style>
     </motion.div>
   );
 };

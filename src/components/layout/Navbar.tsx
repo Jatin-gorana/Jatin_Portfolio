@@ -44,7 +44,7 @@ const Navbar = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          <a href="#hero" className="heading-gradient">Jatin.dev</a>
+          <a href="#hero" className="heading-gradient">Jatin</a>
         </motion.div>
 
         {/* Desktop Navigation */}

@@ -2,42 +2,45 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import SkillsSphere from '../3d/SkillsSphere';
+import { 
+  Code, 
+  Layers, 
+  Database, 
+  Brain, 
+  Microchip
+} from 'lucide-react';
 
 const SkillsSection = () => {
   const skillCategories = [
     {
       title: "Frontend",
-      skills: [
-        { name: "React", level: 90 },
-        { name: "HTML/CSS", level: 95 },
-        { name: "JavaScript", level: 90 },
-        { name: "Tailwind CSS", level: 85 },
-      ]
+      icon: <Code className="w-6 h-6" />,
+      skills: ["React", "HTML/CSS", "JavaScript", "Tailwind CSS"],
+      color: "#61DAFB"
     },
     {
       title: "Backend",
-      skills: [
-        { name: "Node.js", level: 85 },
-        { name: "Express", level: 80 },
-        { name: "Firebase", level: 85 },
-      ]
+      icon: <Layers className="w-6 h-6" />,
+      skills: ["Node.js", "Express", "Firebase"],
+      color: "#339933"
     },
     {
       title: "AI/ML",
-      skills: [
-        { name: "PyTorch", level: 75 },
-        { name: "OpenCV", level: 80 },
-        { name: "NLP", level: 75 },
-        { name: "Computer Vision", level: 75 },
-      ]
+      icon: <Brain className="w-6 h-6" />,
+      skills: ["PyTorch", "OpenCV", "NLP", "Computer Vision"],
+      color: "#EE4C2C"
     },
     {
       title: "Databases",
-      skills: [
-        { name: "MongoDB", level: 85 },
-        { name: "Firestore", level: 80 },
-        { name: "MySQL", level: 75 },
-      ]
+      icon: <Database className="w-6 h-6" />,
+      skills: ["MongoDB", "Firestore", "MySQL"],
+      color: "#47A248"
+    },
+    {
+      title: "Other",
+      icon: <Microchip className="w-6 h-6" />,
+      skills: ["Git", "Postman", "VS Code", "Netlify"],
+      color: "#F05032"
     },
   ];
 
@@ -63,34 +66,42 @@ const SkillsSection = () => {
         <SkillsSphere />
 
         {/* Skills Categories */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-8 mt-20">
           {skillCategories.map((category, i) => (
             <motion.div 
               key={category.title}
-              className="glass-card p-6"
+              className="glass-card p-6 flex flex-col items-center justify-start"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
               viewport={{ once: true, margin: "-50px" }}
             >
-              <h3 className="text-xl font-bold mb-4 text-accent">{category.title}</h3>
-              <div className="space-y-4">
+              <div 
+                className="w-14 h-14 rounded-full flex items-center justify-center mb-4"
+                style={{ 
+                  backgroundColor: `${category.color}20`, 
+                  color: category.color,
+                  boxShadow: `0 0 15px ${category.color}33`
+                }}
+              >
+                {category.icon}
+              </div>
+              
+              <h3 className="text-xl font-bold mb-4" style={{ color: category.color }}>
+                {category.title}
+              </h3>
+              
+              <div className="flex flex-wrap justify-center gap-2">
                 {category.skills.map((skill) => (
-                  <div key={skill.name} className="space-y-1">
-                    <div className="flex justify-between text-sm">
-                      <span>{skill.name}</span>
-                      <span className="text-muted-foreground">{skill.level}%</span>
-                    </div>
-                    <div className="w-full h-1.5 bg-muted rounded-full overflow-hidden">
-                      <motion.div 
-                        className="h-full bg-accent rounded-full"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1, delay: 0.3 }}
-                        viewport={{ once: true }}
-                      />
-                    </div>
-                  </div>
+                  <motion.div
+                    key={skill}
+                    className="tech-badge backdrop-blur-sm"
+                    style={{ backgroundColor: `${category.color}15`, border: `1px solid ${category.color}40` }}
+                    whileHover={{ scale: 1.05, boxShadow: `0 0 10px ${category.color}40` }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  >
+                    {skill}
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
