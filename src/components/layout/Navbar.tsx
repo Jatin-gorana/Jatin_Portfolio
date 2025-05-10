@@ -39,6 +39,18 @@ const Navbar = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [mobileMenuOpen]);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
@@ -97,16 +109,16 @@ const Navbar = () => {
           {mobileMenuOpen ? <X /> : <Menu />}
         </button>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - Fixed Position */}
         {mobileMenuOpen && (
           <motion.div
-            className="fixed inset-0 top-[60px] z-50 bg-background/95 backdrop-blur-md md:hidden"
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{ type: "tween" }}
+            className="fixed inset-x-0 top-[60px] bottom-0 z-50 bg-background/95 backdrop-blur-md md:hidden overflow-y-auto"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ type: "tween", duration: 0.2 }}
           >
-            <nav className="flex flex-col items-center justify-center h-full space-y-8">
+            <nav className="flex flex-col items-center pt-8 h-full space-y-8">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
