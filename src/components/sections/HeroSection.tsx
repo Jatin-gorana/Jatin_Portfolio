@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const HeroSection = () => {
   return (
@@ -79,8 +80,15 @@ const HeroSection = () => {
           >
             <div className="relative w-80 h-80">
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent/20 to-secondary/20 blur-xl animate-pulse"></div>
-              <div className="absolute inset-4 bg-background rounded-full flex items-center justify-center">
-                <div className="text-6xl font-bold bg-gradient-to-br from-accent to-secondary bg-clip-text text-transparent">JG</div>
+              <div className="absolute inset-4 bg-background rounded-full flex items-center justify-center overflow-hidden">
+                <Avatar className="w-full h-full">
+                  <AvatarImage 
+                    src="/lovable-uploads/9632c4f2-1bff-4afc-ac61-509ced9117d9.png" 
+                    alt="Jatin Gorana" 
+                    className="object-cover"
+                  />
+                  <AvatarFallback className="text-6xl font-bold bg-gradient-to-br from-accent to-secondary bg-clip-text text-transparent">JG</AvatarFallback>
+                </Avatar>
               </div>
               <div className="absolute inset-0 rounded-full border border-accent/20 animate-spin-slow"></div>
               <div className="absolute inset-[-10px] rounded-full border border-secondary/20 animate-reverse-spin"></div>
