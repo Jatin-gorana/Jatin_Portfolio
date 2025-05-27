@@ -3,11 +3,13 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { useIsMobile } from '../../hooks/use-mobile';
+import { useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const isMobile = useIsMobile();
+  const location = useLocation();
 
   const navLinks = [
     { name: 'About', href: '#about' },
@@ -26,33 +28,63 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu when clicking links or scrolling on mobile
+  // Reset mobile menu when route changes
+  useEffect(() => {
+    setMobileMenuOpen(false);
+    document.body.style.overflow = '';
+  }, [location.pathname]);
+
+  // Close mobile menu when clicking outside or on links
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (mobileMenuOpen && !target.closest('nav') && !target.closest('button')) {
+      if (mobileMenuOpen && !target.closest('nav') && !target.closest('[data-mobile-menu-button]')) {
         setMobileMenuOpen(false);
       }
     };
     
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    if (mobileMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
+    }
   }, [mobileMenuOpen]);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
-    if (mobileMenuOpen) {
+    if (mobileMenuOpen && isMobile) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
     }
+    
     return () => {
       document.body.style.overflow = '';
     };
-  }, [mobileMenuOpen]);
+  }, [mobileMenuOpen, isMobile]);
+
+  // Close mobile menu when screen size changes to desktop
+  useEffect(() => {
+    if (!isMobile && mobileMenuOpen) {
+      setMobileMenuOpen(false);
+    }
+  }, [isMobile, mobileMenuOpen]);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const handleNavClick = (href: string) => {
+    setMobileMenuOpen(false);
+    
+    // Smooth scroll to section if it's an anchor link
+    if (href.startsWith('#')) {
+      setTimeout(() => {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
   };
 
   return (
@@ -71,7 +103,7 @@ const Navbar = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          <a href="#hero" className="heading-gradient">Jatin</a>
+          <a href="#hero" className="heading-gradient" onClick={() => handleNavClick('#hero')}>Jatin</a>
         </motion.div>
 
         {/* Desktop Navigation */}
@@ -84,6 +116,7 @@ const Navbar = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 * i }}
+              onClick={() => handleNavClick(link.href)}
             >
               {link.name}
             </motion.a>
@@ -102,41 +135,53 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-2xl p-2"
+          className="md:hidden text-2xl p-2 relative z-50"
           onClick={toggleMobileMenu}
           aria-label="Toggle Menu"
+          data-mobile-menu-button="true"
         >
-          {mobileMenuOpen ? <X /> : <Menu />}
+          <motion.div
+            animate={{ rotate: mobileMenuOpen ? 180 : 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            {mobileMenuOpen ? <X /> : <Menu />}
+          </motion.div>
         </button>
 
-        {/* Mobile Menu - Fixed Position */}
+        {/* Mobile Menu Overlay */}
         {mobileMenuOpen && (
           <motion.div
-            className="fixed inset-x-0 top-[60px] bottom-0 z-50 bg-background/95 backdrop-blur-md md:hidden overflow-y-auto"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ type: "tween", duration: 0.2 }}
+            className="fixed inset-0 top-0 z-40 bg-background/95 backdrop-blur-md md:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
           >
-            <nav className="flex flex-col items-center pt-8 h-full space-y-8">
-              {navLinks.map((link) => (
-                <a
+            <nav className="flex flex-col items-center justify-center h-full space-y-8 px-4">
+              {navLinks.map((link, i) => (
+                <motion.a
                   key={link.name}
                   href={link.href}
-                  className="text-xl font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-xl font-medium text-center"
+                  onClick={() => handleNavClick(link.href)}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 * i }}
                 >
                   {link.name}
-                </a>
+                </motion.a>
               ))}
-              <a
+              <motion.a
                 href="/Jatin_Gorana_Resume.pdf"
-                className="btn-primary px-8"
+                className="btn-primary px-8 text-center"
                 download
                 onClick={() => setMobileMenuOpen(false)}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
               >
                 Resume
-              </a>
+              </motion.a>
             </nav>
           </motion.div>
         )}
