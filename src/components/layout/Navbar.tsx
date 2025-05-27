@@ -156,7 +156,9 @@ const Navbar = () => {
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
-              className="fixed inset-0 top-0 z-40 bg-background/95 backdrop-blur-md md:hidden"
+              className={`fixed inset-0 z-40 bg-background/95 backdrop-blur-md md:hidden ${
+                isScrolled ? 'top-[72px]' : 'top-[80px]'
+              }`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
