@@ -92,111 +92,111 @@ const Navbar = () => {
   console.log('Navbar render - mobileMenuOpen:', mobileMenuOpen, 'isMobile:', isMobile);
 
   return (
-    <motion.header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'py-3 bg-background/80 backdrop-blur-lg shadow-md' : 'py-4'
-      }`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ type: 'spring', stiffness: 100, damping: 20 }}
-    >
-      <div className="container mx-auto px-4 flex justify-between items-center">
-        <motion.div 
-          className="text-2xl font-bold"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-        >
-          <a href="#hero" className="heading-gradient" onClick={() => handleNavClick('#hero')}>Jatin</a>
-        </motion.div>
+    <>
+      <motion.header 
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled ? 'py-3 bg-background/80 backdrop-blur-lg shadow-md' : 'py-4'
+        }`}
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ type: 'spring', stiffness: 100, damping: 20 }}
+      >
+        <div className="container mx-auto px-4 flex justify-between items-center">
+          <motion.div 
+            className="text-2xl font-bold"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            <a href="#hero" className="heading-gradient" onClick={() => handleNavClick('#hero')}>Jatin</a>
+          </motion.div>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-5 lg:space-x-8">
-          {navLinks.map((link, i) => (
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-5 lg:space-x-8">
+            {navLinks.map((link, i) => (
+              <motion.a
+                key={link.name}
+                href={link.href}
+                className="text-sm font-medium transition-colors hover:text-accent"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 * i }}
+                onClick={() => handleNavClick(link.href)}
+              >
+                {link.name}
+              </motion.a>
+            ))}
             <motion.a
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium transition-colors hover:text-accent"
+              href="/Jatin_Gorana_Resume.pdf"
+              className="btn-primary text-sm"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 * i }}
-              onClick={() => handleNavClick(link.href)}
+              transition={{ delay: 0.5 }}
+              download
             >
-              {link.name}
+              Resume
             </motion.a>
-          ))}
-          <motion.a
-            href="/Jatin_Gorana_Resume.pdf"
-            className="btn-primary text-sm"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            download
-          >
-            Resume
-          </motion.a>
-        </nav>
+          </nav>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-2xl p-2 relative z-50"
-          onClick={toggleMobileMenu}
-          aria-label="Toggle Menu"
-          data-mobile-menu-button="true"
-        >
-          <motion.div
-            animate={{ rotate: mobileMenuOpen ? 180 : 0 }}
-            transition={{ duration: 0.2 }}
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-2xl p-2 relative z-[60]"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle Menu"
+            data-mobile-menu-button="true"
           >
-            {mobileMenuOpen ? <X /> : <Menu />}
-          </motion.div>
-        </button>
-
-        {/* Mobile Menu Overlay with AnimatePresence */}
-        <AnimatePresence>
-          {mobileMenuOpen && (
             <motion.div
-              className={`fixed inset-0 z-40 bg-background/95 backdrop-blur-md md:hidden ${
-                isScrolled ? 'top-[72px]' : 'top-[80px]'
-              }`}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              animate={{ rotate: mobileMenuOpen ? 180 : 0 }}
               transition={{ duration: 0.2 }}
             >
-              <nav className="flex flex-col items-center justify-center h-full space-y-8 px-4">
-                {navLinks.map((link, i) => (
-                  <motion.a
-                    key={link.name}
-                    href={link.href}
-                    className="text-xl font-medium text-center"
-                    onClick={() => handleNavClick(link.href)}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 20 }}
-                    transition={{ delay: 0.1 * i }}
-                  >
-                    {link.name}
-                  </motion.a>
-                ))}
+              {mobileMenuOpen ? <X /> : <Menu />}
+            </motion.div>
+          </button>
+        </div>
+      </motion.header>
+
+      {/* Mobile Menu Overlay with AnimatePresence */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            className="fixed inset-0 z-[55] bg-background/95 backdrop-blur-md md:hidden flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            <nav className="flex flex-col items-center justify-center space-y-8 px-4 w-full max-w-md">
+              {navLinks.map((link, i) => (
                 <motion.a
-                  href="/Jatin_Gorana_Resume.pdf"
-                  className="btn-primary px-8 text-center"
-                  download
-                  onClick={() => setMobileMenuOpen(false)}
+                  key={link.name}
+                  href={link.href}
+                  className="text-xl font-medium text-center w-full py-2"
+                  onClick={() => handleNavClick(link.href)}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 20 }}
-                  transition={{ delay: 0.5 }}
+                  transition={{ delay: 0.1 * i }}
                 >
-                  Resume
+                  {link.name}
                 </motion.a>
-              </nav>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </motion.header>
+              ))}
+              <motion.a
+                href="/Jatin_Gorana_Resume.pdf"
+                className="btn-primary px-8 text-center"
+                download
+                onClick={() => setMobileMenuOpen(false)}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ delay: 0.5 }}
+              >
+                Resume
+              </motion.a>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
