@@ -6,23 +6,23 @@ import ProjectCard3D from '../3d/ProjectCard3D';
 const ProjectsSection = () => {
   const projects = [
     {
-      title: "CulturalAI",
-      description: "AI-powered platform for artifact recognition and authentication using Gemini, with AR-based 3D hologram rendering for immersive visualization.",
-      technologies: ["Vite", "React", "PyTorch", "Firebase", "AR", "Gemini"],
+      title: "NetVeggie",
+      description: "A comprehensive diet planning application that helps users create personalized meal plans, track nutrition, and manage their dietary goals. Currently developing at Adlytica.",
+      technologies: ["React", "Node.js", "Modern Web Technologies"],
       year: "2025",
       link: "#"
     },
     {
       title: "LegalAI Pro",
-      description: "AI-driven legal platform leveraging Mixtral 3.1 8B for case law analysis, contract review, legal query resolution and document summarization.",
-      technologies: ["Vite", "React", "PyTorch", "Transformers", "Firebase", "OCR"],
+      description: "AI-powered legal assistance platform that helps users understand case laws, review contracts, and get answers to legal questions. Features document summarization and legal news integration.",
+      technologies: ["Vite", "React", "Server.js", "NewsAPI"],
       year: "2025",
       link: "#"
     },
     {
       title: "FinGyaan",
-      description: "Financial literacy platform with interactive tutorials, personalized recommendations, financial news and secure authentication.",
-      technologies: ["ReactJS", "Firebase", "Node.js"],
+      description: "Financial literacy platform with interactive tutorials, personalized recommendations, financial news, mutual fund calculator, and secure Google authentication.",
+      technologies: ["ReactJS", "Firebase", "Node.js", "Firestore"],
       year: "2024",
       link: "#"
     },
@@ -48,8 +48,8 @@ const ProjectsSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold heading-gradient">My Projects</h2>
           <div className="w-20 h-1 bg-accent mx-auto mt-4"></div>
           <p className="mt-6 max-w-2xl mx-auto text-muted-foreground">
-            Here are some of the projects I've worked on, showcasing my skills in full-stack development,
-            AI integration, and creating user-centric applications.
+            Here are some of the projects I've worked on, showcasing my skills in web development,
+            frontend design, and creating user-centric applications.
           </p>
         </motion.div>
 

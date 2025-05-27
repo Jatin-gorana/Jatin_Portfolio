@@ -34,7 +34,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              Full Stack Developer
+              Web Developer
             </motion.h3>
             
             <motion.p 
@@ -43,9 +43,9 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              Skilled in MERN, Firebase, AI, and Machine Learning, with experience in 
-              building scalable, data-driven web applications. Passionate about 
-              leveraging cutting-edge technologies to create intelligent and user-centric solutions.
+              Currently pursuing B.E. in Artificial Intelligence and Data Science. 
+              Skilled in the MERN stack with a strong interest in front-end development. 
+              I enjoy learning new technologies and building better solutions.
             </motion.p>
             
             <motion.div 

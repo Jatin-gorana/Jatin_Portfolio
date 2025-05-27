@@ -6,7 +6,6 @@ import { Github, Linkedin, Mail, Phone, Send } from 'lucide-react';
 const ContactSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real implementation, you would handle form submission here
     console.log("Form submitted");
   };
 

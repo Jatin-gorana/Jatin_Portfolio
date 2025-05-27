@@ -25,7 +25,7 @@ const Footer = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              Full Stack Developer skilled in MERN, Firebase, AI, and Machine Learning.
+              Web Developer skilled in MERN stack with a passion for front-end development and creating user-friendly solutions.
             </motion.p>
           </div>
 
@@ -47,6 +47,7 @@ const Footer = () => {
               viewport={{ once: true }}
             >
               <li><a href="#about" className="text-sm hover:text-accent transition-colors">About</a></li>
+              <li><a href="#skills" className="text-sm hover:text-accent transition-colors">Skills</a></li>
               <li><a href="#projects" className="text-sm hover:text-accent transition-colors">Projects</a></li>
               <li><a href="#achievements" className="text-sm hover:text-accent transition-colors">Achievements</a></li>
               <li><a href="#contact" className="text-sm hover:text-accent transition-colors">Contact</a></li>

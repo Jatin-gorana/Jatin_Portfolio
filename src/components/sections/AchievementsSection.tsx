@@ -1,9 +1,9 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Award, Medal, Star } from 'lucide-react';
+import { Award, Users, GraduationCap } from 'lucide-react';
 
-// Define the Trophy component before using it in the achievements array
+// Define the Trophy component
 const Trophy = ({ size = 24, color = "currentColor", ...props }) => (
   <svg 
     xmlns="http://www.w3.org/2000/svg" 
@@ -30,27 +30,27 @@ const AchievementsSection = () => {
   const achievements = [
     {
       title: "1st Prize at JamRang'25",
-      description: "Won first place for developing LegalAI Pro, an AI-ML-powered full-stack legal assistance platform.",
+      description: "Won first place for developing LegalAI Pro, a full-stack platform that simplifies legal research, document review, and lawyer discovery.",
       icon: Trophy,
       color: "#FFD700"
     },
     {
-      title: "Consolation Prize at CSI Rubix 2025",
-      description: "Among 50 teams for developing CulturalAI, an AI-powered heritage platform.",
-      icon: Medal,
-      color: "#C0C0C0"
-    },
-    {
-      title: "2nd Rank in Academics",
-      description: "Secured 2nd rank in Semesters 1, 3, and 5 of B.E. (AI DS) at Thadomal Shahani Engineering College.",
-      icon: Star,
+      title: "Academic Excellence",
+      description: "Maintaining outstanding academic performance with CGPA of 9.72 in B.E. Artificial Intelligence and Data Science.",
+      icon: GraduationCap,
       color: "#0EA5E9"
     },
     {
-      title: "Google Developers Group Senior Member",
-      description: "Senior Core Team Member at Google Developers Group, TSEC, contributing to technical events and hackathons.",
-      icon: Award,
+      title: "Google Developers Group Core Team",
+      description: "Core Team Member at Google Developers Group, TSEC, organizing hackathons and technical events, engaging 700+ participants.",
+      icon: Users,
       color: "#10B981"
+    },
+    {
+      title: "Professional Experience",
+      description: "Currently working as Web Developer at Adlytica (Remote, Poland), developing NetVeggie diet planning application.",
+      icon: Award,
+      color: "#8B5CF6"
     }
   ];
 

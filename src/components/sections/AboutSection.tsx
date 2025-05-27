@@ -29,7 +29,7 @@ const AboutSection = () => {
               <div className="absolute inset-0 flex items-center justify-center text-white">
                 <div className="text-center">
                   <h3 className="text-xl font-bold mb-2">Jatin Gorana</h3>
-                  <p className="text-sm">Full Stack Developer</p>
+                  <p className="text-sm">Web Developer</p>
                 </div>
               </div>
             </div>
@@ -44,18 +44,17 @@ const AboutSection = () => {
           >
             <h3 className="text-2xl font-bold mb-6">Who I Am</h3>
             <p className="text-muted-foreground mb-4">
-              I'm a Full Stack Developer with expertise in the MERN stack, Firebase, and AI/ML technologies. 
-              Currently pursuing a Bachelor's degree in Artificial Intelligence and Data Science at Thadomal 
-              Shahani Engineering College with a stellar CGPA of 9.72.
+              I'm Jatin Gorana, currently pursuing a Bachelor's degree in Artificial Intelligence and Data Science 
+              at Thadomal Shahani Engineering College with a stellar CGPA of 9.72. I am skilled in the MERN 
+              stack and have built several web applications.
             </p>
             <p className="text-muted-foreground mb-4">
-              My passion lies in building scalable, data-driven web applications that leverage cutting-edge 
-              technologies to create intelligent and user-centric solutions. I enjoy solving complex problems 
-              and turning ideas into functional, efficient code.
+              I have a strong interest in front-end development and enjoy learning new technologies. 
+              I continuously work on improving my skills to build better solutions and create user-friendly applications.
             </p>
             <p className="text-muted-foreground mb-6">
-              When I'm not coding, I'm actively participating in hackathons, contributing to open-source 
-              projects, or expanding my knowledge in emerging technologies.
+              Currently working as a Web Developer at Adlytica (Remote, Poland), where I'm responsible for 
+              building and maintaining user interfaces using modern web technologies.
             </p>
 
             <div className="grid grid-cols-2 gap-4">
@@ -65,20 +64,28 @@ const AboutSection = () => {
                   <li className="text-sm">
                     <span className="font-medium">B.E. in AI & Data Science</span>
                     <p className="text-xs text-muted-foreground">Thadomal Shahani Engineering College, 2022-Present</p>
+                    <p className="text-xs text-accent">CGPA: 9.72</p>
                   </li>
                   <li className="text-sm">
                     <span className="font-medium">HSC (Computer Science)</span>
                     <p className="text-xs text-muted-foreground">Thakur College of Science and Commerce, 2021-2022</p>
+                    <p className="text-xs text-accent">89%</p>
                   </li>
                 </ul>
               </div>
 
               <div>
-                <h4 className="text-sm font-semibold text-accent mb-2">Leadership</h4>
+                <h4 className="text-sm font-semibold text-accent mb-2">Experience</h4>
                 <ul className="space-y-2">
                   <li className="text-sm">
-                    <span className="font-medium">Senior Core Team Member</span>
-                    <p className="text-xs text-muted-foreground">Google Developers Group, TSEC (2024-Present)</p>
+                    <span className="font-medium">Web Developer</span>
+                    <p className="text-xs text-muted-foreground">Adlytica (Remote, Poland)</p>
+                    <p className="text-xs text-accent">May 2025 – Present</p>
+                  </li>
+                  <li className="text-sm">
+                    <span className="font-medium">Core Team Member</span>
+                    <p className="text-xs text-muted-foreground">Google Developers Group, TSEC</p>
+                    <p className="text-xs text-accent">Sep 2024 – May 2025</p>
                   </li>
                 </ul>
               </div>

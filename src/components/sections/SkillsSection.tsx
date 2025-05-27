@@ -5,16 +5,22 @@ import {
   Code, 
   Layers, 
   Database, 
-  Brain, 
-  Microchip
+  GitBranch, 
+  Monitor
 } from 'lucide-react';
 
 const SkillsSection = () => {
   const skillCategories = [
     {
-      title: "Frontend",
+      title: "Languages",
       icon: <Code className="w-6 h-6" />,
-      skills: ["React", "HTML/CSS", "JavaScript", "Tailwind CSS"],
+      skills: ["Java", "Python", "JavaScript (ES6+)"],
+      color: "#F7DF1E"
+    },
+    {
+      title: "Frontend",
+      icon: <Monitor className="w-6 h-6" />,
+      skills: ["ReactJS", "HTML", "CSS", "Tailwind CSS"],
       color: "#61DAFB"
     },
     {
@@ -24,21 +30,15 @@ const SkillsSection = () => {
       color: "#339933"
     },
     {
-      title: "AI/ML",
-      icon: <Brain className="w-6 h-6" />,
-      skills: ["PyTorch", "OpenCV", "NLP", "Computer Vision"],
-      color: "#EE4C2C"
-    },
-    {
       title: "Databases",
       icon: <Database className="w-6 h-6" />,
-      skills: ["MongoDB", "Firestore", "MySQL"],
+      skills: ["MongoDB", "MySQL"],
       color: "#47A248"
     },
     {
-      title: "Other",
-      icon: <Microchip className="w-6 h-6" />,
-      skills: ["Git", "Postman", "VS Code", "Netlify"],
+      title: "Tools",
+      icon: <GitBranch className="w-6 h-6" />,
+      skills: ["Git", "VS Code"],
       color: "#F05032"
     },
   ];
@@ -56,12 +56,11 @@ const SkillsSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold heading-gradient">My Skills</h2>
           <div className="w-20 h-1 bg-accent mx-auto mt-4"></div>
           <p className="mt-6 max-w-2xl mx-auto text-muted-foreground">
-            I've developed a diverse skill set spanning front-end and back-end technologies, 
-            as well as AI/ML capabilities. Here's an overview of my technical expertise:
+            I have developed expertise in modern web technologies, programming languages, 
+            and development tools. Here's an overview of my technical skills:
           </p>
         </motion.div>
 
-        {/* Skills Categories */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mt-12">
           {skillCategories.map((category, i) => (
             <motion.div 
