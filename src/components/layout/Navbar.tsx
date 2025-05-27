@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { useIsMobile } from '../../hooks/use-mobile';
 import { useLocation } from 'react-router-dom';
@@ -70,10 +70,12 @@ const Navbar = () => {
   }, [isMobile, mobileMenuOpen]);
 
   const toggleMobileMenu = () => {
+    console.log('Mobile menu toggle clicked, current state:', mobileMenuOpen);
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
   const handleNavClick = (href: string) => {
+    console.log('Nav link clicked:', href);
     setMobileMenuOpen(false);
     
     // Smooth scroll to section if it's an anchor link
@@ -86,6 +88,8 @@ const Navbar = () => {
       }, 100);
     }
   };
+
+  console.log('Navbar render - mobileMenuOpen:', mobileMenuOpen, 'isMobile:', isMobile);
 
   return (
     <motion.header 
@@ -148,43 +152,47 @@ const Navbar = () => {
           </motion.div>
         </button>
 
-        {/* Mobile Menu Overlay */}
-        {mobileMenuOpen && (
-          <motion.div
-            className="fixed inset-0 top-0 z-40 bg-background/95 backdrop-blur-md md:hidden"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-          >
-            <nav className="flex flex-col items-center justify-center h-full space-y-8 px-4">
-              {navLinks.map((link, i) => (
+        {/* Mobile Menu Overlay with AnimatePresence */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              className="fixed inset-0 top-0 z-40 bg-background/95 backdrop-blur-md md:hidden"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              <nav className="flex flex-col items-center justify-center h-full space-y-8 px-4">
+                {navLinks.map((link, i) => (
+                  <motion.a
+                    key={link.name}
+                    href={link.href}
+                    className="text-xl font-medium text-center"
+                    onClick={() => handleNavClick(link.href)}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 20 }}
+                    transition={{ delay: 0.1 * i }}
+                  >
+                    {link.name}
+                  </motion.a>
+                ))}
                 <motion.a
-                  key={link.name}
-                  href={link.href}
-                  className="text-xl font-medium text-center"
-                  onClick={() => handleNavClick(link.href)}
+                  href="/Jatin_Gorana_Resume.pdf"
+                  className="btn-primary px-8 text-center"
+                  download
+                  onClick={() => setMobileMenuOpen(false)}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 * i }}
+                  exit={{ opacity: 0, y: 20 }}
+                  transition={{ delay: 0.5 }}
                 >
-                  {link.name}
+                  Resume
                 </motion.a>
-              ))}
-              <motion.a
-                href="/Jatin_Gorana_Resume.pdf"
-                className="btn-primary px-8 text-center"
-                download
-                onClick={() => setMobileMenuOpen(false)}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-              >
-                Resume
-              </motion.a>
-            </nav>
-          </motion.div>
-        )}
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </motion.header>
   );
