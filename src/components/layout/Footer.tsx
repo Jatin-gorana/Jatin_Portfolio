@@ -71,10 +71,10 @@ const Footer = () => {
               transition={{ duration: 0.5, delay: 0.5 }}
               viewport={{ once: true }}
             >
-              <a href="https://github.com/jatingorana" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+              <a href="https://github.com/Jatin-gorana/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
                 <Github size={20} />
               </a>
-              <a href="https://linkedin.com/in/jatingorana" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+              <a href="https://www.linkedin.com/in/jatin-gorana/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
                 <Linkedin size={20} />
               </a>
               <a href="mailto:jatingorana123@gmail.com" className="hover:text-accent transition-colors">

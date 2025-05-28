@@ -127,7 +127,7 @@ const Navbar = () => {
               </motion.a>
             ))}
             <motion.a
-              href="/Jatin_Gorana_Resume.pdf"
+              href="/Jatin_Resume.pdf"
               className="btn-primary text-sm"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -181,7 +181,7 @@ const Navbar = () => {
                 </motion.a>
               ))}
               <motion.a
-                href="/Jatin_Gorana_Resume.pdf"
+                href="/Jatin_Resume.pdf"
                 className="btn-primary px-8 text-center"
                 download
                 onClick={() => setMobileMenuOpen(false)}

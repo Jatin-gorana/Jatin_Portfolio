@@ -6,33 +6,34 @@ import ProjectCard3D from '../3d/ProjectCard3D';
 const ProjectsSection = () => {
   const projects = [
     {
-      title: "NetVeggie",
-      description: "A comprehensive diet planning application that helps users create personalized meal plans, track nutrition, and manage their dietary goals. Currently developing at Adlytica.",
-      technologies: ["React", "Node.js", "Modern Web Technologies"],
+      title: "HeritageExplorer",
+      description: "Built an AI-powered platform for artifact recognition and authentication using Gemini, ensuring accurate cultural preservation.",
+      technologies: ["React", "Node.js", "Gemini ai model"],
       year: "2025",
-      link: "#"
+      link: "https://github.com/Jatin-gorana/RUBIX25_3_Status200"
     },
     {
       title: "LegalAI Pro",
       description: "AI-powered legal assistance platform that helps users understand case laws, review contracts, and get answers to legal questions. Features document summarization and legal news integration.",
       technologies: ["Vite", "React", "Server.js", "NewsAPI"],
       year: "2025",
-      link: "#"
+      link: "https://github.com/Jatin-gorana/TSECHACKS_LEGALALLY/"
+    },
+    {
+      title: "HackSync'25 Website",
+      description: "Event website for Google Developers Group hackathon, engaging over 700+ participants with interactive features and real-time updates.",
+      technologies: ["React", "Tailwind CSS", "Firebase"],
+      year: "2025",
+      link: "https://hacksync25.netlify.app"
     },
     {
       title: "FinGyaan",
       description: "Financial literacy platform with interactive tutorials, personalized recommendations, financial news, mutual fund calculator, and secure Google authentication.",
       technologies: ["ReactJS", "Firebase", "Node.js", "Firestore"],
       year: "2024",
-      link: "#"
+      link: "https://codeissance2024.web.app/"
     },
-    {
-      title: "HackSync'25 Website",
-      description: "Event website for Google Developers Group hackathon, engaging over 700+ participants with interactive features and real-time updates.",
-      technologies: ["React", "Tailwind CSS", "Firebase"],
-      year: "2024",
-      link: "https://hacksync25.netlify.app"
-    }
+    
   ];
 
   return (

@@ -66,12 +66,12 @@ const ContactSection = () => {
                 <div>
                   <p className="text-sm text-muted-foreground">LinkedIn</p>
                   <a 
-                    href="https://linkedin.com/in/jatingorana" 
+                    href="https://www.linkedin.com/in/jatin-gorana/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="font-medium hover:text-accent"
                   >
-                    linkedin.com/in/jatingorana
+                    linkedin.com/in/jatin-gorana
                   </a>
                 </div>
               </div>
@@ -83,12 +83,12 @@ const ContactSection = () => {
                 <div>
                   <p className="text-sm text-muted-foreground">GitHub</p>
                   <a 
-                    href="https://github.com/jatingorana" 
+                    href="https://github.com/Jatin-gorana/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="font-medium hover:text-accent"
                   >
-                    github.com/jatingorana
+                    github.com/Jatin-gorana/
                   </a>
                 </div>
               </div>
@@ -103,60 +103,64 @@ const ContactSection = () => {
           >
             <div className="glass-card p-8">
               <h3 className="text-xl font-bold mb-6">Send Me a Message</h3>
-              <form onSubmit={handleSubmit} className="space-y-4">
+
+              <form
+                action="https://getform.io/f/awnwqykb"
+                method="POST"
+                encType="multipart/form-data"
+                className="space-y-4"
+              >
                 <div>
-                  <label htmlFor="name" className="text-sm font-medium block mb-1">
-                    Name
-                  </label>
+                  <label htmlFor="name" className="text-sm font-medium block mb-1">Name</label>
                   <input
                     type="text"
+                    name="name"
                     id="name"
                     className="w-full px-4 py-2 rounded-lg bg-background border border-border focus:border-accent focus:outline-none"
                     required
                   />
                 </div>
-                
+
                 <div>
-                  <label htmlFor="email" className="text-sm font-medium block mb-1">
-                    Email
-                  </label>
+                  <label htmlFor="email" className="text-sm font-medium block mb-1">Email</label>
                   <input
                     type="email"
+                    name="email"
                     id="email"
                     className="w-full px-4 py-2 rounded-lg bg-background border border-border focus:border-accent focus:outline-none"
                     required
                   />
                 </div>
-                
+
                 <div>
-                  <label htmlFor="subject" className="text-sm font-medium block mb-1">
-                    Subject
-                  </label>
+                  <label htmlFor="subject" className="text-sm font-medium block mb-1">Subject</label>
                   <input
                     type="text"
+                    name="subject"
                     id="subject"
                     className="w-full px-4 py-2 rounded-lg bg-background border border-border focus:border-accent focus:outline-none"
                     required
                   />
                 </div>
-                
+
                 <div>
-                  <label htmlFor="message" className="text-sm font-medium block mb-1">
-                    Message
-                  </label>
+                  <label htmlFor="message" className="text-sm font-medium block mb-1">Message</label>
                   <textarea
                     id="message"
+                    name="message"
                     rows={5}
                     className="w-full px-4 py-2 rounded-lg bg-background border border-border focus:border-accent focus:outline-none"
                     required
                   ></textarea>
                 </div>
-                
+
                 <button type="submit" className="btn-primary flex items-center gap-2">
                   <Send size={18} />
                   Send Message
                 </button>
               </form>
+
+
             </div>
           </motion.div>
         </div>
