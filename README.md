@@ -1,73 +1,87 @@
-# Welcome to your Lovable project
+# Jatin Gorana - Portfolio
 
-## Project info
+## 📍 Location
+Mumbai, Maharashtra
 
-**URL**: https://lovable.dev/projects/540c0dfa-c832-4aad-a37e-d20207cafefc
+## 📞 Contact
+- Phone: 9987265862  
+- Email: [jatingorana123@gmail.com](mailto:jatingorana123@gmail.com)  
+- LinkedIn: [linkedin.com/in/jatingorana](https://linkedin.com/in/jatingorana)  
+- GitHub: [github.com/jatingorana](https://github.com/jatingorana)  
+- LeetCode: [leetcode.com/jatingorana](https://leetcode.com/jatingorana)
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 👋 Summary
+I am Jatin Gorana, currently pursuing a Bachelor of Engineering in Artificial Intelligence and Data Science. Skilled in the MERN stack, I have built several web applications with a strong focus on front-end development. I enjoy learning new technologies and continuously improving my skills to deliver better solutions.
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/540c0dfa-c832-4aad-a37e-d20207cafefc) and start prompting.
+## 💼 Work Experience
 
-Changes made via Lovable will be committed automatically to this repo.
+**Web Developer - Adlytica** (Remote, Poland)  
+*May 2025 – Present*  
+- Building and maintaining user interfaces using modern web technologies.  
+- Developing **NetVeggie**, a diet planning app for personalized meal plans, nutrition tracking, and dietary goal management.  
+- Enhancing communication and teamwork skills by collaborating with international clients.
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🎓 Education
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+**Thadomal Shahani Engineering College** — *Bachelor of Engineering in Artificial Intelligence and Data Science*  
+*2022 – Present* | Mumbai, Maharashtra  
+**CGPA:** 9.72  
 
-Follow these steps:
+**Thakur College of Science and Commerce** — *HSC (Computer Science)*  
+*2021 – 2022* | Mumbai, Maharashtra  
+**Percentage:** 89%
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🛠 Skills
 
-# Step 3: Install the necessary dependencies.
-npm i
+- **Languages:** Java, Python  
+- **Frontend:** ReactJS, HTML, CSS, Tailwind CSS, JavaScript (ES6+)  
+- **Backend:** Node.js, Express, Firebase  
+- **Databases:** MongoDB, MySQL  
+- **Version Control:** Git  
+- **Tools:** VS Code  
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+---
 
-**Edit a file directly in GitHub**
+## 🚀 Projects
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### LegalAI Pro - AI-Powered Legal Assistance Platform  
+*Feb 2025*  
+Technologies: Vite, ReactJS, Server.js  
+- Built an online platform that helps users understand case laws, review contracts, and get legal answers.  
+- Features include quick document summarization and law comparisons.  
+- Role: Frontend development and integration of NewsAPI for latest legal news.
 
-**Use GitHub Codespaces**
+### FinGyaan - Financial Literacy Platform  
+*Dec 2024*  
+Technologies: ReactJS, Firebase, Node.js  
+- Created a platform with interactive tutorials, personalized recommendations, and financial news.  
+- Includes tools like mutual fund calculator and finance news/events page.  
+- Role: Frontend development, Firebase authentication (Google), and Firestore data handling.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## 🏆 Achievements
 
-This project is built with:
+- **1st Prize Winner** at JamRang’25 for developing LegalAI Pro — a full-stack platform simplifying legal research, document review, and lawyer discovery.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## 🤝 Leadership & Extracurricular Activities
 
-Simply open [Lovable](https://lovable.dev/projects/540c0dfa-c832-4aad-a37e-d20207cafefc) and click on Share -> Publish.
+**Core Team Member** — Google Developers Group, TSEC  
+*September 2024 – May 2025*  
+- Developed the HackSync’25 website engaging 700+ participants.  
+- Collaborated in organizing hackathons and various technical events.
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+*Feel free to reach out if you'd like to collaborate or know more!*
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
