@@ -57,13 +57,7 @@ const HeroSection = () => {
               <a href="#contact" className="btn-primary">
                 Get In Touch
               </a>
-              <a 
-                href="/Jatin_Gorana_Resume.pdf" 
-                className="btn-secondary"
-                download
-              >
-                Download CV
-              </a>
+              
             </motion.div>
           </div>
           
