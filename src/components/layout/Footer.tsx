@@ -16,7 +16,7 @@ const Footer = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              Jatin.dev
+              Jatin
             </motion.h3>
             <motion.p 
               className="text-sm text-muted-foreground"
@@ -25,7 +25,7 @@ const Footer = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              Web Developer skilled in MERN stack with a passion for front-end development and creating user-friendly solutions.
+              Tech enthusiast dedicated to developing practical and engaging digital experiences across web and mobile platforms.
             </motion.p>
           </div>
 

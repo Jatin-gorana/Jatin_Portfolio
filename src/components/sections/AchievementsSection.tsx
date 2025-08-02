@@ -36,7 +36,7 @@ const AchievementsSection = () => {
     },
     {
       title: "Academic Excellence",
-      description: "Maintaining outstanding academic performance with CGPA of 9.72 in B.E. Artificial Intelligence and Data Science.",
+      description: "Maintaining outstanding academic performance with CGPA of 9.75 in B.E. Artificial Intelligence and Data Science.",
       icon: GraduationCap,
       color: "#0EA5E9"
     },
@@ -48,7 +48,7 @@ const AchievementsSection = () => {
     },
     {
       title: "Professional Experience",
-      description: "Currently working as Web Developer at Adlytica (Remote, Poland), developing NetVeggie diet planning application.",
+      description: "Currently working as App Developer Intern at Antrix Tech Zone (Mumbai), developing mobile applications.",
       icon: Award,
       color: "#8B5CF6"
     }

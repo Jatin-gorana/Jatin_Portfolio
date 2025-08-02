@@ -20,13 +20,13 @@ const SkillsSection = () => {
     {
       title: "Frontend",
       icon: <Monitor className="w-6 h-6" />,
-      skills: ["ReactJS", "HTML", "CSS", "Tailwind CSS"],
+      skills: ["ReactJS", "Ionic (Angular)", "HTML", "CSS", "Tailwind CSS"],
       color: "#61DAFB"
     },
     {
       title: "Backend",
       icon: <Layers className="w-6 h-6" />,
-      skills: ["Node.js", "Express", "Firebase"],
+      skills: ["Node.js", "Express", "Firebase", "REST APIs"],
       color: "#339933"
     },
     {
@@ -38,7 +38,7 @@ const SkillsSection = () => {
     {
       title: "Tools",
       icon: <GitBranch className="w-6 h-6" />,
-      skills: ["Git", "VS Code"],
+      skills: ["Git", "Postman"],
       color: "#F05032"
     },
   ];

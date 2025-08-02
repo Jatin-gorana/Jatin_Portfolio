@@ -34,7 +34,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              Web Developer
+              Software Developer
             </motion.h3>
             
             <motion.p 
@@ -44,7 +44,7 @@ const HeroSection = () => {
               transition={{ duration: 0.5, delay: 0.6 }}
             >
               Currently pursuing B.E. in Artificial Intelligence and Data Science. 
-              Skilled in the MERN stack with a strong interest in front-end development. 
+              Skilled in Web and App Development with a strong interest in building impactful products. 
               I enjoy learning new technologies and building better solutions.
             </motion.p>
             
@@ -77,7 +77,7 @@ const HeroSection = () => {
               <div className="absolute inset-4 bg-background rounded-full flex items-center justify-center overflow-hidden">
                 <Avatar className="w-full h-full">
                   <AvatarImage 
-                    src="/lovable-uploads/9632c4f2-1bff-4afc-ac61-509ced9117d9.png" 
+                    src="/jatin_profile.jpg" 
                     alt="Jatin Gorana" 
                     className="object-cover"
                   />
@@ -93,7 +93,7 @@ const HeroSection = () => {
       
       <motion.a
         href="#about"
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-accent/70 hover:text-accent"
+        className="absolute bottom-10 inset-x-0 mx-auto flex flex-col items-center text-accent/70 hover:text-accent"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 0.5 }}

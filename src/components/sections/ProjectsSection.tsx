@@ -7,17 +7,17 @@ const ProjectsSection = () => {
   const projects = [
     {
       title: "HeritageExplorer",
-      description: "Built an AI-powered platform for artifact recognition and authentication using Gemini, ensuring accurate cultural preservation.",
+      description: "Built a One Stop Platform for artifact recognition and authentication using Gemini, ensuring accurate cultural preservation.",
       technologies: ["React", "Node.js", "Gemini ai model"],
       year: "2025",
-      link: "https://github.com/Jatin-gorana/RUBIX25_3_Status200"
+      link: "https://culturalheritageexplorer.netlify.app/"
     },
     {
       title: "LegalAI Pro",
       description: "AI-powered legal assistance platform that helps users understand case laws, review contracts, and get answers to legal questions. Features document summarization and legal news integration.",
       technologies: ["Vite", "React", "Server.js", "NewsAPI"],
       year: "2025",
-      link: "https://github.com/Jatin-gorana/TSECHACKS_LEGALALLY/"
+      link: "https://legalally.netlify.app/"
     },
     {
       title: "HackSync'25 Website",
